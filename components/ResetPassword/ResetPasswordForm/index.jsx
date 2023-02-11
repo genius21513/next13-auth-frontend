@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import actions from '../../../redux/actions';
 import Api from '@/utils/api';
 
-const LoginForm = () => {
+const ResetPasswordForm = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('Elenor.OKon@hotmail.com');
   const [password, setPassword] = useState('puA5IQK3VGxu5ES');
@@ -74,4 +74,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default ResetPasswordForm;

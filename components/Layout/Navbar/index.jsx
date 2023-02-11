@@ -16,12 +16,12 @@ const Navbar = () => {
         </Link>
         <NavLink href="/register" privateRoute={false}>
           Register
-        </NavLink>
-        <NavLink href="/verify" privateRoute={false}>
-          Verify
-        </NavLink>
+        </NavLink>        
         <NavLink href="/login" privateRoute={false}>
           Login
+        </NavLink>
+        <NavLink href="/resetpassword" privateRoute={false}>
+          ResetPassword
         </NavLink>
         <Link href="/user">
           Profile
