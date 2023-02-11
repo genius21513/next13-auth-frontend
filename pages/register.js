@@ -11,8 +11,8 @@ const RegisterPage = () => {
   );
 };
 
-RegisterPage.getInitialProps = function (ctx) {
-  verifyToken(ctx);
-};
+// RegisterPage.getInitialProps = function (ctx) {
+//   verifyToken(ctx);
+// };
 
 export default RegisterPage;

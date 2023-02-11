@@ -11,8 +11,8 @@ const LoginPage = () => {
   );
 };
 
-LoginPage.getInitialProps = function (ctx) {
-  verifyToken(ctx);
-};
+// LoginPage.getInitialProps = function (ctx) {
+//   verifyToken(ctx);
+// };
 
 export default LoginPage;
