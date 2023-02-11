@@ -7,7 +7,7 @@ const Whoami = ({ user }) => {
     <Layout title="Who Am I">
       {(user && (
         <h3 className="title is-3">
-          You are logged in as{' '}
+          You are logged in as {' '}
           <strong className="is-size-2 has-text-primary">{user}</strong>.
         </h3>      
       )) || <h3 className="title is-3 ">You aren't logged</h3>}

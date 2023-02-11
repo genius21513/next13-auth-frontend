@@ -5,13 +5,18 @@ const CustomHead = ({ title }) => (
     <title>{title}</title>
     <meta charSet="utf-8" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <link
+    <link 
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css" 
+      rel="stylesheet" 
+    />
+    
+    {/* <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-    />
+    /> */}
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
   </Head>
 );
