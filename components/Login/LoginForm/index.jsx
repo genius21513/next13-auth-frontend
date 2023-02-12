@@ -10,21 +10,24 @@ const LoginForm = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    // dispatch(actions.authenticate({ email, password }, 'login'));
-    const data = await Api.post(
-      'auth/session',
-      JSON.stringify({
-        email,
-        password
-      }),
-      {
-        headers: { 
-          'Content-Type': 'application/json'
-        },
-      }
-    ).then(res => res.data);
-    alert(data.message);
-    // localStorage.setItem("user". data.acc)
+    try {
+      const data = await Api.post(
+        'auth/session',
+        JSON.stringify({
+          email,
+          password
+        }),
+        {
+          headers: { 
+            'Content-Type': 'application/json'
+          },
+        }
+      ).then(res => res.data);
+      alert(data.message);
+      localStorage.setItem("token", data.accessToken);
+    }catch(err) {
+      alert('Error occur');
+    }
   };
 
   return (

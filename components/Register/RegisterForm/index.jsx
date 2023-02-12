@@ -18,33 +18,39 @@ const RegisterForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const data = await Api.post(
-      'user/register',
-      JSON.stringify({
-        firstName,
-        lastName,
-        middleName,
-        email,
-        password,
-        passwordConfirmation
-      }),
-      {
-        headers: {
-          'Content-Type': 'application/json'
+    try {
+      const data = await Api.post(
+        'user/register',
+        JSON.stringify({
+          firstName,
+          lastName,
+          middleName,
+          email,
+          password,
+          passwordConfirmation
+        }),
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
         }
-      }
-    ).then(res => res.data)
+      ).then(res => res.data)
 
-    alert(data.message);
-    // setVerifyUrl(`https://auth.yurilima.uk/api/user/verify/${data.id}/${data.verificationCode}`);
-    setVerifyUrl(`user/verify/${data.id}/${data.verificationCode}`);
+      alert(data.message);
+      setVerifyUrl(`user/verify/${data.id}/${data.verificationCode}`);
+    } catch(err) {
+      alert('Error occur');
+    }
   };
 
   const verifyUser = async (e, url) => {
     e.preventDefault();
-    const data = await Api.get(url).then(res => res.data);
-    alert(data.message);
+    try {
+      const data = await Api.get(url).then(res => res.data);
+      alert(data.message);
+    }catch(err) {
+      alert('Error occur');
+    }
   }
   
   return (
